@@ -1,0 +1,586 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Arial", sans-serif;
+}
+
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    background-color: #ffffff;
+    color: #111;
+    line-height: 1.5;
+    padding-bottom: 50px;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+    background-color: #fff;
+}
+
+.header img {
+    max-width: 280px;
+    height: auto;
+    object-fit: contain;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #111;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 300;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    opacity: 0.5;
+}
+
+.vitrine {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.produtos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.produto {
+    text-align: center;
+    padding-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.produto:hover {
+    transform: translateY(-5px);
+}
+
+.produto img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    background-color: #f5f5f5;
+}
+
+.produto h3 {
+    font-size: 14px;
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+.produto p {
+    margin-top: 5px;
+    font-size: 13px;
+    color: #555;
+}
+
+.produto button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    border: 1px solid #111;
+    background: transparent;
+    color: #111;
+    font-size: 12px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: inherit;
+    transition: 0.3s;
+}
+
+.produto button:hover {
+    background: #111;
+    color: #fff;
+}
+
+@media (max-width: 1024px) {
+    .produtos {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .produtos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .header img {
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .produtos {
+        grid-template-columns: 1fr;
+    }
+
+    .menu {
+        gap: 20px;
+        font-size: 12px;
+    }
+}
+
+.login-container,
+.cadastro-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+}
+
+.login-box,
+.cadastro-box {
+    width: 360px;
+    padding: 30px;
+    border: 1px solid #eee;
+    text-align: center;
+    background: #fff;
+}
+
+.login-box h2,
+.cadastro-box h2 {
+    margin-bottom: 20px;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 16px;
+}
+
+.login-box input,
+.cadastro-box input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    outline: none;
+    font-size: 13px;
+}
+
+.login-box button,
+.cadastro-box button {
+    width: 100%;
+    padding: 12px;
+    background: #111;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 12px;
+    transition: 0.3s;
+    font-family: inherit;
+}
+
+.login-box button:hover,
+.cadastro-box button:hover {
+    opacity: 0.8;
+}
+
+.link-cadastro {
+    margin-top: 15px;
+    font-size: 12px;
+}
+
+.link-cadastro a {
+    color: #111;
+    text-decoration: underline;
+}
+
+.contato-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+}
+
+.contato-box {
+    width: 400px;
+    padding: 30px;
+    border: 1px solid #eee;
+    text-align: center;
+    background: #fff;
+}
+
+.contato-box h2 {
+    margin-bottom: 20px;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.contato-box input,
+.contato-box textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    outline: none;
+    font-size: 13px;
+    font-family: inherit;
+}
+
+.contato-box textarea {
+    resize: none;
+    height: 120px;
+}
+
+.contato-box button {
+    width: 100%;
+    padding: 12px;
+    background: #111;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 12px;
+    transition: 0.3s;
+}
+
+.contato-box button:hover {
+    opacity: 0.8;
+}
+
+.footer {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #eee;
+    margin-top: 50px;
+    font-size: 12px;
+    color: #777;
+    letter-spacing: 1px;
+}
+
+.confirmacao-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+}
+
+.confirmacao-box {
+    width: 400px;
+    padding: 30px;
+    border: 1px solid #eee;
+    text-align: center;
+    background: #fff;
+}
+
+.confirmacao-box h2 {
+    margin-bottom: 20px;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.confirmacao-box .info {
+    text-align: left;
+    font-size: 14px;
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.confirmacao-box hr {
+    margin: 15px 0;
+    border: 0;
+    border-top: 1px solid #eee;
+}
+
+.confirmacao-box button {
+    width: 100%;
+    padding: 12px;
+    background: #111;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 12px;
+    transition: 0.3s;
+}
+
+.confirmacao-box button:hover {
+    opacity: 0.8;
+}
+
+.carrinho-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.carrinho-container h2 {
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+}
+
+.item a {
+    color: red;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.carrinho-container button {
+    margin-top: 20px;
+    padding: 12px;
+    width: 100%;
+    background: #111;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #111;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 300;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    opacity: 0.5;
+}
+
+.cart-link {
+    font-size: 16px;
+    text-decoration: none;
+    color: #111;
+    transition: 0.3s;
+}
+
+.cart-link:hover {
+    opacity: 0.6;
+}
+
+.user-info {
+    font-size: 13px;
+    color: #555;
+    margin-left: 15px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.form-pagamento {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.cartao {
+    margin-top: 10px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fafafa;
+}
+
+.cartao h4 {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.cartao input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+body {
+    background: #fff;
+    font-family: Arial, sans-serif;
+    color: #111;
+}
+
+h2 {
+    text-align: center;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-top: 40px;
+}
+
+.payment-box {
+    width: 90%;
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 30px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    text-align: center;
+    background: #fafafa;
+}
+
+p {
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.code {
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 10px;
+    background: #fff;
+    border: 1px dashed #ccc;
+    margin: 15px 0;
+}
+
+button {
+    margin-top: 20px;
+    padding: 12px 20px;
+    border: none;
+    background: #111;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #333;
+}
+
+.cartao-box {
+    margin-top: 15px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background: #fff;
+    border-radius: 8px;
+}
+
+.cartao-box input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.pix-highlight {
+    font-size: 20px;
+    font-weight: bold;
+    color: #0a7d5a;
+    margin: 20px 0;
+}
+
+.boleto-highlight {
+    font-size: 16px;
+    font-family: monospace;
+    padding: 15px;
+    background: #fff;
+    border: 1px solid #ddd;
+    letter-spacing: 1px;
+    margin: 20px 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.confirmacao-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+.confirmacao-box {
+    width: 90%;
+    max-width: 450px;
+    padding: 30px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    background: #fafafa;
+    text-align: center;
+}
+
+.confirmacao-box h2 {
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.confirmacao-box input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    outline: none;
+    transition: 0.2s;
+}
+
+.confirmacao-box input:focus {
+    border-color: #111;
+}
+
+.confirmacao-box button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: #111;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.confirmacao-box button:hover {
+    background: #333;
+}
+
+.header img {
+    width: 100%;
+    max-height: 180px;
+    object-fit: cover;
+}
