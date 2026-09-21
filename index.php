@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-include "/app/cons.php";
-require_once "/app/banco.php";
+include __DIR__ . "/app/cons.php";
+require_once __DIR__ . "/app/banco.php";
 
 $consulta = "SELECT * FROM produtos";
 $resultado = banco($server, $user, $password, $db, $consulta);
