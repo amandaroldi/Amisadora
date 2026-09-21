@@ -9,6 +9,7 @@ $resultado = banco($server, $user, $password, $db, $consulta);
 ?>
 
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>Amisadora</title>
@@ -23,14 +24,24 @@ $resultado = banco($server, $user, $password, $db, $consulta);
 </header>
 
 <nav class="menu">
+
     <a href="index.php">Início</a>
+
     <?php if (isset($_SESSION["login"])): ?>
-        <a href="logout.php">Sair (<?= $_SESSION["login"] ?>)</a>
+
+        <a href="logout.php">
+            Sair (<?= $_SESSION["login"] ?>)
+        </a>
+
     <?php else: ?>
+
         <a href="login.php">Login</a>
+
     <?php endif; ?>
+
     <a href="contato.php">Contato</a>
     <a href="carrinho.php">Carrinho</a>
+
 </nav>
 
 <main class="vitrine">
@@ -41,14 +52,23 @@ $resultado = banco($server, $user, $password, $db, $consulta);
 
             <div class="produto">
 
-                <img src="img/<?= $linha["Imagem"] ?>" alt="<?= $linha["Nome"] ?>">
+                <img
+                    src="img/<?= $linha["Imagem"] ?>"
+                    alt="<?= $linha["Nome"] ?>"
+                >
 
-                <h3><?= $linha["Nome"] ?></h3>
+                <h3>
+                    <?= $linha["Nome"] ?>
+                </h3>
 
-                <p>R$ <?= number_format($linha["Preco"], 2, ',', '.') ?></p>
+                <p>
+                    R$ <?= number_format($linha["Preco"], 2, ',', '.') ?>
+                </p>
 
                 <a href="carrinho.php?produto=<?= urlencode($linha["Nome"]) ?>&preco=<?= $linha["Preco"] ?>">
-                    <button>Adicionar ao Carrinho</button>
+                    <button type="button">
+                        Adicionar ao Carrinho
+                    </button>
                 </a>
 
             </div>
