@@ -5,11 +5,7 @@ function banco($server, $user, $password, $db, $consulta)
     $banco = new mysqli($server, $user, $password, $db);
 
     if ($banco->connect_error) {
-        echo "Falha de conexão: (" .
-             $banco->connect_errno .
-             ") - " .
-             $banco->connect_error;
-        exit();
+        die("Falha de conexão: " . $banco->connect_error);
     }
 
     $banco->set_charset("utf8mb4");
@@ -17,11 +13,7 @@ function banco($server, $user, $password, $db, $consulta)
     $resultado = $banco->query($consulta);
 
     if (!$resultado) {
-        echo "Falha na consulta: (" .
-             $banco->errno .
-             ") - " .
-             $banco->error;
-        exit();
+        die("Falha na consulta: " . $banco->error);
     }
 
     return $resultado;
